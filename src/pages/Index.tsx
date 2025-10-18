@@ -140,7 +140,7 @@ const Index = () => {
                   Printed & Digital Copies
                 </h3>
                 <p className="text-foreground/70 leading-relaxed mb-4">
-                  Experience the full devotional journey in print or digital format. Perfect for personal study, reflection, or sharing the message with a friend.
+                  Experience the full devotional journey in print or digital format. Perfect for personal study, reflection.
                 </p>
                 <Button className="w-full font-medium">
                   Purchase Now
