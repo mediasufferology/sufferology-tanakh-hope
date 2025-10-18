@@ -56,7 +56,7 @@ const Index = () => {
             </p>
             
             <p className="text-lg leading-relaxed">
-              Every believer faces suffering. But what if your pain has purpose? What if the very Hebrew words used to describe affliction, refinement, and redemption unlock a deeper understanding of God's heart toward you?
+              Everyone faces suffering. But what if your pain has purpose? What if the very Hebrew words used to describe affliction, refinement, and redemption unlock a deeper understanding of God's heart toward you?
             </p>
             
             <p className="text-lg leading-relaxed">
@@ -132,9 +132,52 @@ const Index = () => {
             "Comfort those in any trouble with the comfort we ourselves receive from God." — 2 Corinthians 1:4
           </p>
           
-          <Button size="lg" className="font-medium">
-            Sponsor a Copy Today
-          </Button>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6 text-center">
+                <div className="text-4xl mb-4">📘</div>
+                <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
+                  Printed Books & Ebooks
+                </h3>
+                <p className="text-foreground/70 leading-relaxed mb-4">
+                  Buy directly through Stripe.
+                </p>
+                <Button className="w-full font-medium">
+                  Purchase Now
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6 text-center">
+                <div className="text-4xl mb-4">💝</div>
+                <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
+                  Sponsorships
+                </h3>
+                <p className="text-foreground/70 leading-relaxed mb-4">
+                  One-time, bulk, or monthly gift options to share books with others.
+                </p>
+                <Button className="w-full font-medium">
+                  Sponsor Books
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6 text-center">
+                <div className="text-4xl mb-4">📖</div>
+                <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
+                  Pay It Forward
+                </h3>
+                <p className="text-foreground/70 leading-relaxed mb-4">
+                  Sponsor copies to be gifted to those in need of encouragement.
+                </p>
+                <Button className="w-full font-medium">
+                  Gift Forward
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -192,7 +235,7 @@ const Index = () => {
           </h2>
           
           <p className="text-lg text-foreground/80 mb-8 leading-relaxed max-w-2xl mx-auto">
-            Invite our team to speak at your church, conference, or ministry event. 
+            Invite our trained media team to speak at your church, conference, or ministry event. 
             We offer workshops and teachings on Biblical suffering, Hebrew word study, 
             and finding hope in Christ through the Scriptures.
           </p>
