@@ -133,14 +133,14 @@ const Index = () => {
           </p>
           
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardContent className="pt-6 text-center">
+            <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+              <CardContent className="pt-6 text-center flex flex-col h-full">
                 <div className="text-4xl mb-4">📘</div>
                 <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
                   Printed & Digital Copies
                 </h3>
-                <p className="text-foreground/70 leading-relaxed mb-4">
-                  Experience the full devotional journey in print or digital format. Perfect for personal study, reflection.
+                <p className="text-foreground/70 leading-relaxed mb-4 flex-grow">
+                  Experience the full devotional journey in print or digital format. Perfect for personal study and reflection.
                 </p>
                 <Button className="w-full font-medium">
                   Purchase Now
@@ -148,13 +148,13 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardContent className="pt-6 text-center">
+            <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+              <CardContent className="pt-6 text-center flex flex-col h-full">
                 <div className="text-4xl mb-4">💝</div>
                 <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
                   Sponsorships
                 </h3>
-                <p className="text-foreground/70 leading-relaxed mb-4">
+                <p className="text-foreground/70 leading-relaxed mb-4 flex-grow">
                   Help others discover the comfort of Scripture through suffering. Choose bulk or monthly sponsorship to send copies of Sufferology to those in need of encouragement, discipleship, or hope.
                 </p>
                 <Button className="w-full font-medium">
@@ -163,13 +163,13 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardContent className="pt-6 text-center">
+            <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+              <CardContent className="pt-6 text-center flex flex-col h-full">
                 <div className="text-4xl mb-4">🎁</div>
                 <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
                   Pay It Forward
                 </h3>
-                <p className="text-foreground/70 leading-relaxed mb-4">
+                <p className="text-foreground/70 leading-relaxed mb-4 flex-grow">
                   Join the movement of generosity. Gift this book forward to someone you know walking through hardship. Your simple act of generosity places hope in another's hands.
                 </p>
                 <Button className="w-full font-medium">
