@@ -137,10 +137,10 @@ const Index = () => {
               <CardContent className="pt-6 text-center">
                 <div className="text-4xl mb-4">📘</div>
                 <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
-                  Printed Books & Ebooks
+                  Printed & Digital Copies
                 </h3>
                 <p className="text-foreground/70 leading-relaxed mb-4">
-                  Buy directly through Stripe.
+                  Experience the full devotional journey in print or digital format. Perfect for personal study, reflection, or sharing the message with a friend.
                 </p>
                 <Button className="w-full font-medium">
                   Purchase Now
@@ -155,7 +155,7 @@ const Index = () => {
                   Sponsorships
                 </h3>
                 <p className="text-foreground/70 leading-relaxed mb-4">
-                  One-time, bulk, or monthly gift options to share books with others.
+                  Help others discover the comfort of Scripture through suffering. Choose bulk or monthly sponsorship to send copies of Sufferology to those in need of encouragement, discipleship, or hope.
                 </p>
                 <Button className="w-full font-medium">
                   Sponsor Books
@@ -165,12 +165,12 @@ const Index = () => {
             
             <Card className="border-2 hover:shadow-lg transition-shadow">
               <CardContent className="pt-6 text-center">
-                <div className="text-4xl mb-4">📖</div>
+                <div className="text-4xl mb-4">🎁</div>
                 <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
                   Pay It Forward
                 </h3>
                 <p className="text-foreground/70 leading-relaxed mb-4">
-                  Sponsor copies to be gifted to those in need of encouragement.
+                  Join the movement of generosity. Gift this book forward to someone you know walking through hardship. Your simple act of generosity places hope in another's hands.
                 </p>
                 <Button className="w-full font-medium">
                   Gift Forward
