@@ -13,6 +13,12 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+
+      export default defineConfig({
+  base: "/",
+});
+
+        
     },
   },
 }));
