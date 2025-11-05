@@ -35,6 +35,18 @@ jobs:
       - name: Build
         run: npm run build
       
+      - name: Diagnostic Check
+        run: |
+          if [ ! -f "./dist/index.html" ]; then
+            echo "❌ Build failed: index.html missing in dist/"
+            exit 1
+          fi
+          if [ ! -d "./dist/assets" ]; then
+            echo "⚠️  Warning: assets directory missing in dist/"
+          fi
+          echo "✅ Build OK: index.html found"
+          echo "✅ Diagnostic: dist directory structure verified"
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
       
