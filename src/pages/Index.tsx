@@ -12,14 +12,46 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <span className="font-ancient text-xl tracking-wider uppercase text-foreground">Sufferology</span>
-          <div className="group relative">
-            <Button size="sm" className="font-medium">
-              Get the Book
-            </Button>
-            <div className="absolute top-full right-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <p className="text-sm bg-accent text-accent-foreground px-4 py-2 rounded-md shadow-lg whitespace-nowrap max-w-xs">
-                Give life to someone in their suffering
-              </p>
+          <div className="hidden md:flex items-center gap-2">
+            <div className="group relative">
+              <Button size="sm" className="font-medium">
+                Buy for Yourself
+              </Button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <p className="text-xs bg-accent text-accent-foreground px-3 py-2 rounded-md shadow-lg whitespace-nowrap">
+                  Digital or physical copy for personal use.
+                </p>
+              </div>
+            </div>
+            <div className="group relative">
+              <Button size="sm" variant="outline" className="font-medium border-2">
+                Pay It Forward
+              </Button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <p className="text-xs bg-accent text-accent-foreground px-3 py-2 rounded-md shadow-lg whitespace-nowrap">
+                  You choose the recipient and delivery method.
+                </p>
+              </div>
+            </div>
+            <div className="group relative">
+              <Button size="sm" variant="outline" className="font-medium border-2">
+                Donate a Copy
+              </Button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <p className="text-xs bg-accent text-accent-foreground px-3 py-2 rounded-md shadow-lg whitespace-nowrap">
+                  We match your gift with someone requesting help.
+                </p>
+              </div>
+            </div>
+            <div className="group relative">
+              <Button size="sm" variant="secondary" className="font-medium">
+                Buy in Bulk
+              </Button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <p className="text-xs bg-accent text-accent-foreground px-3 py-2 rounded-md shadow-lg whitespace-nowrap">
+                  Discounted pricing for groups and ministries.
+                </p>
+              </div>
             </div>
           </div>
         </div>
