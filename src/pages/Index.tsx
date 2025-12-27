@@ -1,43 +1,64 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { BookOpen, Gift, Users, MessageSquare, Scroll } from "lucide-react";
+import { BookOpen, Gift, Users, MessageSquare, Scroll, Heart, ShoppingBag, Package } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+      <section className="relative min-h-[90vh] flex items-center justify-center px-4 py-20">
         <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSI1MCIgeT0iMTAwIiBmb250LXNpemU9IjEyMCIgb3BhY2l0eT0iMC4xIj7XkDwvdGV4dD48L3N2Zz4=')] bg-repeat"></div>
         
-        <div className="max-w-4xl mx-auto text-center relative z-10 animate-fade-in">
+        <div className="max-w-5xl mx-auto text-center relative z-10 animate-fade-in">
           <div className="mb-6 inline-block">
             <Scroll className="w-16 h-16 text-accent mx-auto mb-4" />
           </div>
           
-          <h1 className="font-playfair text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-            Sufferology
+          <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+            This book is a gift. Pass it on.
           </h1>
           
-          <p className="font-playfair text-2xl md:text-3xl text-muted-foreground mb-4 italic">
-            In the Tanakh
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed">
+            A Christ-centered devotional on suffering, hope, and the deeper meaning of Scripture—given intentionally, received personally.
           </p>
           
-          <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Discover the Hebrew roots of suffering and the profound hope found in Scripture. 
-            A devotional journey through the ancient words that reveal purpose in pain.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="font-medium">
-              Purchase Book
-            </Button>
-            <Button size="lg" variant="outline" className="font-medium border-2">
-              Gift It Forward
-            </Button>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center">
+              <Button size="lg" className="font-medium w-full mb-2">
+                Buy for Yourself
+              </Button>
+              <p className="text-xs text-muted-foreground text-center">
+                Digital or physical copy for personal use.
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Button size="lg" variant="outline" className="font-medium border-2 w-full mb-2">
+                Pay It Forward
+              </Button>
+              <p className="text-xs text-muted-foreground text-center">
+                You choose the recipient and delivery method.
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Button size="lg" variant="outline" className="font-medium border-2 w-full mb-2">
+                Donate a Copy
+              </Button>
+              <p className="text-xs text-muted-foreground text-center">
+                We match your gift with someone requesting help.
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Button size="lg" variant="secondary" className="font-medium w-full mb-2">
+                Buy in Bulk
+              </Button>
+              <p className="text-xs text-muted-foreground text-center">
+                Discounted pricing for groups and ministries.
+              </p>
+            </div>
           </div>
           
-          <p className="text-sm text-muted-foreground mt-6 italic">
+          <p className="text-sm text-muted-foreground mt-10 italic">
             "He was pierced for our transgressions, He was crushed for our iniquities" — Isaiah 53:5
           </p>
         </div>
@@ -113,71 +134,128 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gift It Forward Section */}
+      {/* Four-Column Engagement Grid */}
       <section className="py-20 px-4 bg-accent/10">
-        <div className="max-w-4xl mx-auto text-center">
-          <Gift className="w-16 h-16 text-accent mx-auto mb-6" />
-          
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Pay Hope Forward
-          </h2>
-          
-          <p className="text-lg text-foreground/80 mb-8 leading-relaxed max-w-2xl mx-auto">
-            Suffering isolates. Hope connects. When you gift <span className="italic">Sufferology</span>, 
-            you're not just sharing a book—you're extending comfort, Biblical truth, and the reminder 
-            that no one suffers alone.
-          </p>
-          
-          <p className="text-xl font-playfair italic text-foreground mb-8">
-            "Comfort those in any trouble with the comfort we ourselves receive from God." — 2 Corinthians 1:4
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Ways to Get the Book
+            </h2>
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+              Whether for yourself, a friend, or a ministry—there's a path for everyone.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Column 1: Buy for Yourself */}
             <Card className="border-2 hover:shadow-lg transition-shadow h-full">
-              <CardContent className="pt-6 text-center flex flex-col h-full">
-                <div className="text-4xl mb-4">📘</div>
-                <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
-                  Printed & Digital Copies
+              <CardContent className="pt-6 flex flex-col h-full">
+                <ShoppingBag className="w-10 h-10 text-accent mb-4" />
+                <h3 className="font-playfair text-xl font-semibold mb-2 text-foreground">
+                  Buy for Yourself
                 </h3>
-                <p className="text-foreground/70 leading-relaxed mb-4 flex-grow">
-                  Experience the full devotional journey in print or digital format. Perfect for personal study and reflection.
+                <p className="text-sm text-muted-foreground mb-4">
+                  Digital or physical copy for personal use.
                 </p>
-                <Button className="w-full font-medium">
-                  Purchase Now
+                <p className="text-foreground/70 leading-relaxed mb-4 flex-grow text-sm">
+                  Purchase a personal copy of Sufferology for your own study and reflection.
+                </p>
+                <div className="space-y-2 mb-4 text-sm text-foreground/70">
+                  <p><strong>Digital Access</strong> — ePub + PDF, secure account-based access.</p>
+                  <p><strong>Physical Paperback</strong> — International shipping; multiple languages.</p>
+                </div>
+                <p className="text-xs text-muted-foreground mb-4 italic">
+                  Delivery times depend on our print partner. Physical books arrive within 7–14 business days.
+                </p>
+                <Button className="w-full font-medium mt-auto">
+                  Buy Your Copy
                 </Button>
               </CardContent>
             </Card>
-            
+
+            {/* Column 2: Pay It Forward */}
             <Card className="border-2 hover:shadow-lg transition-shadow h-full">
-              <CardContent className="pt-6 text-center flex flex-col h-full">
-                <div className="text-4xl mb-4">💝</div>
-                <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
-                  Sponsorships
-                </h3>
-                <p className="text-foreground/70 leading-relaxed mb-4 flex-grow">
-                  Help others discover the comfort of Scripture through suffering. Choose bulk or monthly sponsorship to send copies of Sufferology to those in need of encouragement, discipleship, or hope.
-                </p>
-                <Button className="w-full font-medium">
-                  Sponsor Books
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-2 hover:shadow-lg transition-shadow h-full">
-              <CardContent className="pt-6 text-center flex flex-col h-full">
-                <div className="text-4xl mb-4">🎁</div>
-                <h3 className="font-playfair text-xl font-semibold mb-3 text-foreground">
+              <CardContent className="pt-6 flex flex-col h-full">
+                <Gift className="w-10 h-10 text-accent mb-4" />
+                <h3 className="font-playfair text-xl font-semibold mb-2 text-foreground">
                   Pay It Forward
                 </h3>
-                <p className="text-foreground/70 leading-relaxed mb-4 flex-grow">
-                  Join the movement of generosity. Gift this book forward to someone you know walking through hardship. Your simple act of generosity places hope in another's hands.
+                <p className="text-sm text-muted-foreground mb-4">
+                  You choose the recipient and delivery method.
                 </p>
-                <Button className="w-full font-medium">
-                  Gift Forward
+                <p className="text-foreground/70 leading-relaxed mb-4 flex-grow text-sm">
+                  Gift this book directly to someone you know who is walking through suffering.
+                </p>
+                <div className="space-y-2 mb-4 text-sm text-foreground/70">
+                  <p><strong>Digital Access</strong> — Delivered to recipient account.</p>
+                  <p><strong>Physical Paperback</strong> — Shipped directly to recipient.</p>
+                </div>
+                <p className="text-xs text-muted-foreground mb-4 italic">
+                  Include recipient name, email (digital), or shipping address (physical). Add a personal message.
+                </p>
+                <Button className="w-full font-medium mt-auto">
+                  Gift This Book
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Column 3: Donate a Copy */}
+            <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+              <CardContent className="pt-6 flex flex-col h-full">
+                <Heart className="w-10 h-10 text-accent mb-4" />
+                <h3 className="font-playfair text-xl font-semibold mb-2 text-foreground">
+                  Donate a Copy
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  We match your gift with someone requesting help.
+                </p>
+                <p className="text-foreground/70 leading-relaxed mb-4 flex-grow text-sm">
+                  Sponsor a book for someone in need. Donated copies are sent to readers who request one.
+                </p>
+                <div className="space-y-2 mb-4 text-sm text-foreground/70">
+                  <p><strong>Format:</strong> Digital Access or Physical Paperback</p>
+                  <p><strong>Quantity:</strong> 1, 3, 5, or custom</p>
+                  <p><strong>Monthly:</strong> Optional recurring subscription</p>
+                </div>
+                <p className="text-xs text-muted-foreground mb-4 italic">
+                  Sponsored books are gifts and are not tax-deductible donations.
+                </p>
+                <Button className="w-full font-medium mt-auto">
+                  Donate a Copy
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Column 4: Buy in Bulk */}
+            <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+              <CardContent className="pt-6 flex flex-col h-full">
+                <Package className="w-10 h-10 text-accent mb-4" />
+                <h3 className="font-playfair text-xl font-semibold mb-2 text-foreground">
+                  Buy in Bulk
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Discounted pricing for groups and ministries.
+                </p>
+                <p className="text-foreground/70 leading-relaxed mb-4 flex-grow text-sm">
+                  Designed for churches, workshops, recovery groups, prisons, and study cohorts.
+                </p>
+                <div className="space-y-2 mb-4 text-sm text-foreground/70">
+                  <p><strong>Format:</strong> Digital Access or Physical Paperback</p>
+                  <p><strong>Quantity:</strong> 10, 25, 50, 100+</p>
+                </div>
+                <p className="text-xs text-muted-foreground mb-4 italic">
+                  Bulk orders fulfilled using author copies; shipped in batches for group distribution.
+                </p>
+                <Button className="w-full font-medium mt-auto">
+                  Request Bulk Order
                 </Button>
               </CardContent>
             </Card>
           </div>
+
+          <p className="text-center text-sm text-muted-foreground mt-8 italic">
+            Prefer to order through Amazon? <span className="underline cursor-pointer">Available on Amazon.</span>
+          </p>
         </div>
       </section>
 
