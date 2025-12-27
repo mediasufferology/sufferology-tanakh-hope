@@ -1,60 +1,89 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { BookOpen, Gift, Users, MessageSquare, Scroll, Heart, ShoppingBag, Package } from "lucide-react";
+import { BookOpen, Gift, Users, MessageSquare, Scroll, Heart, ShoppingBag, Package, Menu, X } from "lucide-react";
 import { FAQ } from "@/components/FAQ";
 import { Chatbot } from "@/components/Chatbot";
 
+const ctaButtons = [
+  { id: 'buy', label: 'Buy for Yourself', subtitle: 'Digital or physical copy for personal use.', variant: 'default' as const },
+  { id: 'gift', label: 'Pay It Forward', subtitle: 'You choose the recipient and delivery method.', variant: 'outline' as const },
+  { id: 'donate', label: 'Donate a Copy', subtitle: 'We match your gift with someone requesting help.', variant: 'outline' as const },
+  { id: 'bulk', label: 'Buy in Bulk', subtitle: 'Discounted pricing for groups and ministries.', variant: 'secondary' as const },
+];
+
 const Index = () => {
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleButtonClick = (id: string) => {
+    setActiveTooltip(activeTooltip === id ? null : id);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header with CTA */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <span className="font-ancient text-xl tracking-wider uppercase text-foreground">Sufferology</span>
+          
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-2">
-            <div className="group relative">
-              <Button size="sm" className="font-medium">
-                Buy for Yourself
-              </Button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap">
-                  Digital or physical copy for personal use.
-                </p>
+            {ctaButtons.map((btn) => (
+              <div key={btn.id} className="group relative">
+                <Button 
+                  size="sm" 
+                  variant={btn.variant}
+                  className={`font-medium ${btn.variant === 'outline' ? 'border-2' : ''}`}
+                  onClick={() => handleButtonClick(btn.id)}
+                >
+                  {btn.label}
+                </Button>
+                <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 transition-opacity duration-300 pointer-events-none ${activeTooltip === btn.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                  <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap">
+                    {btn.subtitle}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="group relative">
-              <Button size="sm" variant="outline" className="font-medium border-2">
-                Pay It Forward
-              </Button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap">
-                  You choose the recipient and delivery method.
-                </p>
-              </div>
-            </div>
-            <div className="group relative">
-              <Button size="sm" variant="outline" className="font-medium border-2">
-                Donate a Copy
-              </Button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap">
-                  We match your gift with someone requesting help.
-                </p>
-              </div>
-            </div>
-            <div className="group relative">
-              <Button size="sm" variant="secondary" className="font-medium">
-                Buy in Bulk
-              </Button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap">
-                  Discounted pricing for groups and ministries.
-                </p>
-              </div>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <Button 
+            variant="ghost" 
+            size="lg" 
+            className="md:hidden p-3"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          </Button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-background border-t border-border animate-fade-in">
+            <div className="px-4 py-6 space-y-4">
+              {ctaButtons.map((btn) => (
+                <div key={btn.id} className="space-y-2">
+                  <Button 
+                    variant={btn.variant}
+                    className={`w-full text-lg py-6 font-medium ${btn.variant === 'outline' ? 'border-2' : ''}`}
+                    onClick={() => handleButtonClick(btn.id)}
+                  >
+                    {btn.label}
+                  </Button>
+                  <div className={`overflow-hidden transition-all duration-300 ${activeTooltip === btn.id ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md text-center">
+                      {btn.subtitle}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
+        )}
       </header>
 
       {/* Hero Section */}
