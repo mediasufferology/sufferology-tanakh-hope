@@ -42,7 +42,7 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <section className="py-20 px-4 bg-card" id="faq">
+    <section className="py-20 px-4 bg-muted" id="faq">
       <div className="max-w-3xl mx-auto">
         <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">
           Frequently Asked Questions
