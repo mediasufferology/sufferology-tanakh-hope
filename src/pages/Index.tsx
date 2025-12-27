@@ -15,8 +15,8 @@ const Index = () => {
             <Scroll className="w-16 h-16 text-accent mx-auto mb-4" />
           </div>
           
-          <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-            This book is a gift. Pass it on.
+          <h1 className="font-ancient text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight tracking-wider uppercase">
+            Sufferology
           </h1>
           
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed">
@@ -253,8 +253,8 @@ const Index = () => {
             </Card>
           </div>
 
-          <p className="text-center text-sm text-muted-foreground mt-8 italic">
-            Prefer to order through Amazon? <span className="underline cursor-pointer">Available on Amazon.</span>
+          <p className="text-center text-lg md:text-xl text-foreground mt-10 font-medium">
+            Prefer to order through Amazon? <a href="#" className="text-accent underline hover:no-underline">Available on Amazon.</a>
           </p>
         </div>
       </section>
@@ -344,7 +344,7 @@ const Index = () => {
           </h2>
           
           <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-            For all media requests, interviews, and press inquiries, please contact our media team directly.
+            For all podcasts, interviews, or other media/press related inquiries, please contact our media team directly.
           </p>
           
           <Card className="border-2">
