@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { BookOpen, Gift, Users, MessageSquare, Scroll, Heart, ShoppingBag, Package } from "lucide-react";
+import { FAQ } from "@/components/FAQ";
+import { Chatbot } from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -15,12 +17,12 @@ const Index = () => {
             <Scroll className="w-16 h-16 text-accent mx-auto mb-4" />
           </div>
           
-          <h1 className="font-ancient text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight tracking-wider uppercase">
+          <h1 className="font-ancient text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight tracking-[0.15em] uppercase" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.15)' }}>
             Sufferology
           </h1>
           
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed">
-            A Christ-centered devotional on suffering, hope, and the deeper meaning of Scripture—given intentionally, received personally.
+            Living on the defensive? Seems like life keeps knocking you down when you get up? Give life to someone in their suffering so they can conquer the purpose in pain.
           </p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -73,7 +75,7 @@ const Index = () => {
           
           <div className="prose prose-lg max-w-none text-foreground/80 space-y-6">
             <p className="text-lg leading-relaxed">
-              <span className="font-playfair text-xl italic text-accent">Sufferology</span> is not just a book—it's an invitation to encounter God through the lens of Hebrew word study and the sacred text of the Tanakh (Old Testament).
+              <span className="font-playfair text-xl italic text-accent">Sufferology</span> is not just a devotional—it's an invitation to be armored up and truly rejoice in affliction.
             </p>
             
             <p className="text-lg leading-relaxed">
@@ -81,7 +83,7 @@ const Index = () => {
             </p>
             
             <p className="text-lg leading-relaxed">
-              This devotional explores the ancient Hebrew language to illuminate the nature of suffering—not to explain it away, but to reveal the Messiah who walked through it, and invites us to trust Him in the midst of it.
+              Discover the Hebrew roots of suffering and the profound hope found in Scripture. A devotional journey through the ancient words that reveal purpose in pain.
             </p>
           </div>
         </div>
@@ -370,6 +372,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQ />
+
       {/* Footer */}
       <footer className="py-12 px-4 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto text-center">
@@ -386,6 +391,9 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* Chatbot */}
+      <Chatbot />
     </div>
   );
 };
