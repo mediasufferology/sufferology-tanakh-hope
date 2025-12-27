@@ -18,7 +18,7 @@ const Index = () => {
                 Buy for Yourself
               </Button>
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <p className="text-xs bg-accent text-accent-foreground px-3 py-2 rounded-md shadow-lg whitespace-nowrap">
+                <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap">
                   Digital or physical copy for personal use.
                 </p>
               </div>
@@ -28,7 +28,7 @@ const Index = () => {
                 Pay It Forward
               </Button>
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <p className="text-xs bg-accent text-accent-foreground px-3 py-2 rounded-md shadow-lg whitespace-nowrap">
+                <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap">
                   You choose the recipient and delivery method.
                 </p>
               </div>
@@ -38,7 +38,7 @@ const Index = () => {
                 Donate a Copy
               </Button>
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <p className="text-xs bg-accent text-accent-foreground px-3 py-2 rounded-md shadow-lg whitespace-nowrap">
+                <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap">
                   We match your gift with someone requesting help.
                 </p>
               </div>
@@ -48,7 +48,7 @@ const Index = () => {
                 Buy in Bulk
               </Button>
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <p className="text-xs bg-accent text-accent-foreground px-3 py-2 rounded-md shadow-lg whitespace-nowrap">
+                <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap">
                   Discounted pricing for groups and ministries.
                 </p>
               </div>
@@ -74,40 +74,6 @@ const Index = () => {
             Living on the defensive? Seems like life keeps knocking you down when you get up? Give life to someone in their suffering so they can conquer the purpose in pain.
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <div className="flex flex-col items-center">
-              <Button size="lg" className="font-medium w-full mb-2">
-                Buy for Yourself
-              </Button>
-              <p className="text-xs text-muted-foreground text-center">
-                Digital or physical copy for personal use.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Button size="lg" variant="outline" className="font-medium border-2 w-full mb-2">
-                Pay It Forward
-              </Button>
-              <p className="text-xs text-muted-foreground text-center">
-                You choose the recipient and delivery method.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Button size="lg" variant="outline" className="font-medium border-2 w-full mb-2">
-                Donate a Copy
-              </Button>
-              <p className="text-xs text-muted-foreground text-center">
-                We match your gift with someone requesting help.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Button size="lg" variant="secondary" className="font-medium w-full mb-2">
-                Buy in Bulk
-              </Button>
-              <p className="text-xs text-muted-foreground text-center">
-                Discounted pricing for groups and ministries.
-              </p>
-            </div>
-          </div>
           
           <p className="text-sm text-muted-foreground mt-10 italic">
             "He was pierced for our transgressions, He was crushed for our iniquities" — Isaiah 53:5
