@@ -350,6 +350,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQ />
+
       {/* Media Contact Section */}
       <section className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -383,9 +386,6 @@ const Index = () => {
           </Card>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <FAQ />
 
       {/* Footer */}
       <footer className="py-12 px-4 bg-primary text-primary-foreground">
