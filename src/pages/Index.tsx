@@ -5,15 +5,17 @@ import { Input } from "@/components/ui/input";
 import { BookOpen, Gift, Users, MessageSquare, Scroll, Heart, ShoppingBag, Package, Menu, X } from "lucide-react";
 import { FAQ } from "@/components/FAQ";
 import { Chatbot } from "@/components/Chatbot";
+import { useNavigate } from "react-router-dom";
 
 const ctaButtons = [
-  { id: 'buy', label: 'Buy for Yourself', subtitle: 'Digital or physical copy for personal use.', variant: 'default' as const },
-  { id: 'gift', label: 'Pay It Forward', subtitle: 'You choose the recipient and delivery method.', variant: 'outline' as const },
-  { id: 'donate', label: 'Donate a Copy', subtitle: 'We match your gift with someone requesting help.', variant: 'outline' as const },
-  { id: 'bulk', label: 'Buy in Bulk', subtitle: 'Discounted pricing for groups and ministries.', variant: 'secondary' as const },
+  { id: 'buy', label: 'Buy for Yourself', subtitle: 'Digital or physical copy for personal use.', variant: 'default' as const, link: null },
+  { id: 'gift', label: 'Pay It Forward', subtitle: 'You choose the recipient and delivery method.', variant: 'outline' as const, link: '/pay-it-forward' },
+  { id: 'donate', label: 'Donate a Copy', subtitle: 'We match your gift with someone requesting help.', variant: 'outline' as const, link: null },
+  { id: 'bulk', label: 'Buy in Bulk', subtitle: 'Discounted pricing for groups and ministries.', variant: 'secondary' as const, link: null },
 ];
 
 const Index = () => {
+  const navigate = useNavigate();
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -74,10 +76,23 @@ const Index = () => {
                   >
                     {btn.label}
                   </Button>
-                  <div className={`overflow-hidden transition-all duration-300 ${activeTooltip === btn.id ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md text-center">
-                      {btn.subtitle}
-                    </p>
+                  <div className={`overflow-hidden transition-all duration-300 ${activeTooltip === btn.id ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    {btn.link ? (
+                      <button
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          navigate(btn.link);
+                        }}
+                        className="w-full text-base font-medium bg-accent text-accent-foreground px-4 py-4 rounded-md text-center cursor-pointer hover:bg-accent/80 active:scale-[0.98] transition-all"
+                      >
+                        {btn.subtitle}
+                        <span className="block text-sm mt-1 opacity-80">Tap to learn more →</span>
+                      </button>
+                    ) : (
+                      <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md text-center">
+                        {btn.subtitle}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
