@@ -66,9 +66,6 @@ const Index = () => {
             <Scroll className="w-16 h-16 text-accent mx-auto mb-4" />
           </div>
           
-          <h1 className="font-ancient text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight tracking-[0.15em] uppercase" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.15)' }}>
-            Sufferology
-          </h1>
           
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed">
             Living on the defensive? Seems like life keeps knocking you down when you get up? Give life to someone in their suffering so they can conquer the purpose in pain.
@@ -78,29 +75,6 @@ const Index = () => {
           <p className="text-sm text-muted-foreground mt-10 italic">
             "He was pierced for our transgressions, He was crushed for our iniquities" — Isaiah 53:5
           </p>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-20 px-4 bg-card">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">
-            Understanding Suffering Through Scripture
-          </h2>
-          
-          <div className="prose prose-lg max-w-none text-foreground/80 space-y-6">
-            <p className="text-lg leading-relaxed">
-              <span className="font-playfair text-xl italic text-accent">Sufferology</span> is not just a devotional—it's an invitation to be armored up and truly rejoice in affliction.
-            </p>
-            
-            <p className="text-lg leading-relaxed">
-              Everyone faces suffering. But what if your pain has purpose? What if the very Hebrew words used to describe affliction, refinement, and redemption unlock a deeper understanding of God's heart toward you?
-            </p>
-            
-            <p className="text-lg leading-relaxed">
-              Discover the Hebrew roots of suffering and the profound hope found in Scripture. A devotional journey through the ancient words that reveal purpose in pain.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -147,6 +121,29 @@ const Index = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 px-4 bg-card">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">
+            Understanding Suffering Through Scripture
+          </h2>
+          
+          <div className="prose prose-lg max-w-none text-foreground/80 space-y-6">
+            <p className="text-lg leading-relaxed">
+              <span className="font-playfair text-xl italic text-accent">Sufferology</span> is not just a devotional—it's an invitation to be armored up and truly rejoice in affliction.
+            </p>
+            
+            <p className="text-lg leading-relaxed">
+              Everyone faces suffering. But what if your pain has purpose? What if the very Hebrew words used to describe affliction, refinement, and redemption unlock a deeper understanding of God's heart toward you?
+            </p>
+            
+            <p className="text-lg leading-relaxed">
+              Discover the Hebrew roots of suffering and the profound hope found in Scripture. A devotional journey through the ancient words that reveal purpose in pain.
+            </p>
           </div>
         </div>
       </section>
