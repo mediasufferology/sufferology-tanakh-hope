@@ -8,8 +8,25 @@ import { Chatbot } from "@/components/Chatbot";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      {/* Header with CTA */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+          <span className="font-ancient text-xl tracking-wider uppercase text-foreground">Sufferology</span>
+          <div className="group relative">
+            <Button size="sm" className="font-medium">
+              Get the Book
+            </Button>
+            <div className="absolute top-full right-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+              <p className="text-sm bg-accent text-accent-foreground px-4 py-2 rounded-md shadow-lg whitespace-nowrap max-w-xs">
+                Give life to someone in their suffering
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center px-4 py-20">
+      <section className="relative min-h-[90vh] flex items-center justify-center px-4 py-20 pt-28">
         <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSI1MCIgeT0iMTAwIiBmb250LXNpemU9IjEyMCIgb3BhY2l0eT0iMC4xIj7XkDwvdGV4dD48L3N2Zz4=')] bg-repeat"></div>
         
         <div className="max-w-5xl mx-auto text-center relative z-10 animate-fade-in">
@@ -379,7 +396,7 @@ const Index = () => {
       <footer className="py-12 px-4 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-playfair text-2xl font-semibold mb-4">
-            Sufferology – In the Tanakh
+            Sufferology
           </p>
           
           <p className="text-primary-foreground/80 mb-6 italic">
