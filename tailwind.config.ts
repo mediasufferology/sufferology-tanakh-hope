@@ -16,7 +16,8 @@ export default {
       fontFamily: {
         'playfair': ['Playfair Display', 'serif'],
         'sans': ['Inter', 'sans-serif'],
-        'ancient': ['Cinzel', 'serif'],
+        'ancient': ['Uncial Antiqua', 'Cinzel', 'serif'],
+        'cinzel': ['Cinzel', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
