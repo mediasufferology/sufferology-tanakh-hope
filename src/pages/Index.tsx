@@ -111,12 +111,12 @@ const Index = () => {
             <Scroll className="w-16 h-16 text-accent mx-auto mb-4" />
           </div>
           
-          <h1 className="font-ancient text-5xl md:text-8xl font-normal mb-4 text-foreground tracking-widest uppercase">
+          <h1 className="font-ancient text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-bold mb-3 md:mb-6 text-foreground tracking-widest uppercase">
             Suffer-ology
           </h1>
           
-          <p className="font-cinzel text-2xl md:text-4xl text-accent mb-8 tracking-wide">
-            the study of suffering
+          <p className="font-cinzel text-xl sm:text-3xl md:text-4xl lg:text-5xl text-accent mb-6 md:mb-8 tracking-wide font-bold">
+            The Study of Suffering
           </p>
           
           <p className="text-sm text-muted-foreground mt-10 italic">
