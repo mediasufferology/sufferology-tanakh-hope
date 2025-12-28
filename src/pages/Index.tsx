@@ -115,12 +115,8 @@ const Index = () => {
             Suffer-ology
           </h1>
           
-          <p className="font-cinzel text-xl md:text-2xl text-accent mb-8 tracking-wide italic">
-            /ˈsʌfərˌɒlədʒi/ — the study of suffering
-          </p>
-          
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Living on the defensive? Seems like life keeps knocking you down when you get up? Can you really say you rejoice in your trials?
+          <p className="font-cinzel text-2xl md:text-4xl text-accent mb-8 tracking-wide">
+            the study of suffering
           </p>
           
           <p className="text-sm text-muted-foreground mt-10 italic">
