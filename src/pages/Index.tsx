@@ -36,8 +36,7 @@ const Index = () => {
               <div key={btn.id} className="group relative">
                 <Button 
                   size="sm" 
-                  variant={btn.variant}
-                  className={`font-medium ${btn.variant === 'outline' ? 'border-2' : ''}`}
+                  className="font-medium bg-primary text-primary-foreground hover:bg-primary/90"
                   onClick={() => handleButtonClick(btn.id)}
                 >
                   {btn.label}
@@ -110,11 +109,13 @@ const Index = () => {
             <Scroll className="w-16 h-16 text-accent mx-auto mb-4" />
           </div>
           
+          <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-6 text-foreground tracking-tight">
+            Purpose in Pain
+          </h1>
           
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Living on the defensive? Seems like life keeps knocking you down when you get up? Give life to someone in their suffering so they can conquer the purpose in pain.
+            Living on the defensive? Seems like life keeps knocking you down when you get up? Can you really say you rejoice in your trials?
           </p>
-          
           
           <p className="text-sm text-muted-foreground mt-10 italic">
             "He was pierced for our transgressions, He was crushed for our iniquities" — Isaiah 53:5
@@ -200,7 +201,7 @@ const Index = () => {
               Ways to Get the Book
             </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              Whether for yourself, a friend, or a ministry—there's a path for everyone.
+              Whether for yourself, a friend, or a ministry.
             </p>
           </div>
 
