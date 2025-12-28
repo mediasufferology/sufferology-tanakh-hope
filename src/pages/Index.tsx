@@ -8,10 +8,10 @@ import { Chatbot } from "@/components/Chatbot";
 import { useNavigate } from "react-router-dom";
 
 const ctaButtons = [
-  { id: 'buy', label: 'Buy for Yourself', subtitle: 'Digital or physical copy for personal use.', variant: 'default' as const, link: null },
-  { id: 'gift', label: 'Pay It Forward', subtitle: 'You choose the recipient and delivery method.', variant: 'outline' as const, link: '/pay-it-forward' },
-  { id: 'donate', label: 'Donate a Copy', subtitle: 'We match your gift with someone requesting help.', variant: 'outline' as const, link: null },
-  { id: 'bulk', label: 'Buy in Bulk', subtitle: 'Discounted pricing for groups and ministries.', variant: 'secondary' as const, link: null },
+  { id: 'buy', label: 'Buy for Yourself', subtitle: 'Digital or physical copy for personal use.', sectionId: 'buy-yourself' },
+  { id: 'gift', label: 'Pay It Forward', subtitle: 'You choose the recipient and delivery method.', sectionId: 'pay-it-forward' },
+  { id: 'donate', label: 'Donate a Copy', subtitle: 'We match your gift with someone requesting help.', sectionId: 'donate-copy' },
+  { id: 'bulk', label: 'Buy in Bulk', subtitle: 'Discounted pricing for groups and ministries.', sectionId: 'buy-bulk' },
 ];
 
 const Index = () => {
@@ -21,6 +21,15 @@ const Index = () => {
 
   const handleButtonClick = (id: string) => {
     setActiveTooltip(activeTooltip === id ? null : id);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setMobileMenuOpen(false);
+      setActiveTooltip(null);
+    }
   };
 
   return (
@@ -37,14 +46,17 @@ const Index = () => {
                 <Button 
                   size="sm" 
                   className="font-medium bg-primary text-primary-foreground hover:bg-primary/90"
-                  onClick={() => handleButtonClick(btn.id)}
+                  onClick={() => scrollToSection(btn.sectionId)}
                 >
                   {btn.label}
                 </Button>
-                <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 transition-opacity duration-300 pointer-events-none ${activeTooltip === btn.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-                  <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap">
+                <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 transition-opacity duration-300 ${activeTooltip === btn.id ? 'opacity-100 pointer-events-auto' : 'opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto'}`}>
+                  <button
+                    onClick={() => scrollToSection(btn.sectionId)}
+                    className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md shadow-lg whitespace-nowrap cursor-pointer hover:bg-accent/80 transition-colors"
+                  >
                     {btn.subtitle}
-                  </p>
+                  </button>
                 </div>
               </div>
             ))}
@@ -69,29 +81,19 @@ const Index = () => {
               {ctaButtons.map((btn) => (
                 <div key={btn.id} className="space-y-2">
                   <Button 
-                    variant={btn.variant}
-                    className={`w-full text-lg py-6 font-medium ${btn.variant === 'outline' ? 'border-2' : ''}`}
+                    className="w-full text-lg py-6 font-medium bg-primary text-primary-foreground hover:bg-primary/90"
                     onClick={() => handleButtonClick(btn.id)}
                   >
                     {btn.label}
                   </Button>
                   <div className={`overflow-hidden transition-all duration-300 ${activeTooltip === btn.id ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'}`}>
-                    {btn.link ? (
-                      <button
-                        onClick={() => {
-                          setMobileMenuOpen(false);
-                          navigate(btn.link);
-                        }}
-                        className="w-full text-base font-medium bg-accent text-accent-foreground px-4 py-4 rounded-md text-center cursor-pointer hover:bg-accent/80 active:scale-[0.98] transition-all"
-                      >
-                        {btn.subtitle}
-                        <span className="block text-sm mt-1 opacity-80">Tap to learn more →</span>
-                      </button>
-                    ) : (
-                      <p className="text-base font-medium bg-accent text-accent-foreground px-4 py-3 rounded-md text-center">
-                        {btn.subtitle}
-                      </p>
-                    )}
+                    <button
+                      onClick={() => scrollToSection(btn.sectionId)}
+                      className="w-full text-base font-medium bg-accent text-accent-foreground px-4 py-4 rounded-md text-center cursor-pointer hover:bg-accent/80 active:scale-[0.98] transition-all"
+                    >
+                      {btn.subtitle}
+                      <span className="block text-sm mt-1 opacity-80">Tap to scroll →</span>
+                    </button>
                   </div>
                 </div>
               ))}
@@ -109,9 +111,13 @@ const Index = () => {
             <Scroll className="w-16 h-16 text-accent mx-auto mb-4" />
           </div>
           
-          <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-6 text-foreground tracking-tight">
-            Purpose in Pain
+          <h1 className="font-ancient text-5xl md:text-8xl font-normal mb-4 text-foreground tracking-widest uppercase">
+            Suffer-ology
           </h1>
+          
+          <p className="font-cinzel text-xl md:text-2xl text-accent mb-8 tracking-wide italic">
+            /ˈsʌfərˌɒlədʒi/ — the study of suffering
+          </p>
           
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed">
             Living on the defensive? Seems like life keeps knocking you down when you get up? Can you really say you rejoice in your trials?
@@ -207,7 +213,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Column 1: Buy for Yourself */}
-            <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+            <Card id="buy-yourself" className="border-2 hover:shadow-lg transition-shadow h-full scroll-mt-24">
               <CardContent className="pt-6 flex flex-col h-full">
                 <ShoppingBag className="w-10 h-10 text-accent mb-4" />
                 <h3 className="font-playfair text-xl font-semibold mb-2 text-foreground">
@@ -233,7 +239,7 @@ const Index = () => {
             </Card>
 
             {/* Column 2: Pay It Forward */}
-            <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+            <Card id="pay-it-forward" className="border-2 hover:shadow-lg transition-shadow h-full scroll-mt-24">
               <CardContent className="pt-6 flex flex-col h-full">
                 <Gift className="w-10 h-10 text-accent mb-4" />
                 <h3 className="font-playfair text-xl font-semibold mb-2 text-foreground">
@@ -259,7 +265,7 @@ const Index = () => {
             </Card>
 
             {/* Column 3: Donate a Copy */}
-            <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+            <Card id="donate-copy" className="border-2 hover:shadow-lg transition-shadow h-full scroll-mt-24">
               <CardContent className="pt-6 flex flex-col h-full">
                 <Heart className="w-10 h-10 text-accent mb-4" />
                 <h3 className="font-playfair text-xl font-semibold mb-2 text-foreground">
@@ -286,7 +292,7 @@ const Index = () => {
             </Card>
 
             {/* Column 4: Buy in Bulk */}
-            <Card className="border-2 hover:shadow-lg transition-shadow h-full">
+            <Card id="buy-bulk" className="border-2 hover:shadow-lg transition-shadow h-full scroll-mt-24">
               <CardContent className="pt-6 flex flex-col h-full">
                 <Package className="w-10 h-10 text-accent mb-4" />
                 <h3 className="font-playfair text-xl font-semibold mb-2 text-foreground">
